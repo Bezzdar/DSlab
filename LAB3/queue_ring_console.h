@@ -1,6 +1,6 @@
 #ifndef QUEUE_RING_CONSOLE_H
 #define QUEUE_RING_CONSOLE_H
 
-void queueRingMenu();
+void RunQueueRingConsole();
 
-#endif 
+#endif // QUEUE_RING_CONSOLE_H

@@ -1,6 +1,6 @@
 #ifndef RING_BUFFER_CONSOLE_H
 #define RING_BUFFER_CONSOLE_H
 
-void ringBufferMenu();
+void RunRingBufferConsole();
 
-#endif 
+#endif // RING_BUFFER_CONSOLE_H

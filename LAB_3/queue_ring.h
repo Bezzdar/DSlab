@@ -16,4 +16,4 @@ private:
     RingBuffer buffer;
 };
 
-#endif // QUEUE_RING_H
+#endif 

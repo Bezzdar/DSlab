@@ -16,9 +16,12 @@ public:
     void clear();
 
     void print() const;
+    bool isEmpty() const;
 
 private:
     Node* top;
+
+
 };
 
 #endif // STACK_H

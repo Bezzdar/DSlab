@@ -29,6 +29,10 @@ void Stack::clear() {
     }
 }
 
+bool Stack::isEmpty() const {
+    return top == nullptr; // Проверка на пустоту стека
+}
+
 void Stack::print() const {
     Node* current = top;
     while (current) {
@@ -37,3 +41,6 @@ void Stack::print() const {
     }
     std::cout << std::endl;
 }
+
+
+

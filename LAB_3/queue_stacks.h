@@ -20,4 +20,4 @@ private:
     void transfer();         // Перенос элементов из входного стека в выходной
 };
 
-#endif // QUEUE_STACKS_H
+#endif 
