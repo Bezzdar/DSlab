@@ -21,25 +21,22 @@ int QueueTwoStacks::Dequeue() {
 }
 
 void QueueTwoStacks::Display() const {
-    std::cout << "Queue elements (as one set): ";
+    std::cout << "Queue elements: ";
 
-    // Сначала выводим элементы из stack2 (в том порядке, как они уже готовятся к извлечению)
-    StackNode* current = stack2.top;
-    while (current) {
+    StackNode* current = stack2.top; // указатель на верхнем элементе
+    while (current) { //пока current не равен nullptr
         std::cout << current->data << " ";
-        current = current->next;
+        current = current->next; //переход к следующему узлу
     }
 
-    // Теперь создаём временный стек для инверсии stack1
-    Stack tempStack;
-    current = stack1.top;
+    Stack tempStack; //cоздается временный стек
+    current = stack1.top; //указатель на верхнем элементе
     while (current) {
-        tempStack.Push(current->data);
-        current = current->next;
+        tempStack.Push(current->data); //инвертирование методом пуш
+        current = current->next; 
     }
 
-    // Выводим элементы из временного стека, чтобы они были в правильном порядке
-    current = tempStack.top;
+    current = tempStack.top; // указатель на верхнем элементе
     while (current) {
         std::cout << current->data << " ";
         current = current->next;
