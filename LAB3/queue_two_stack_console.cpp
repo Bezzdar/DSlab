@@ -1,11 +1,13 @@
 #include "queue_two_stacks.h"
 #include <iostream>
+#include <cstdlib> // Для system()
 
 void RunQueueTwoStackConsole() {
     QueueTwoStacks queue;
     int choice, value;
 
     do {
+        system("cls"); // Очистка консоли
         queue.Display();
         std::cout << "Queue (Two Stacks) Menu:\n";
         std::cout << "1. Enqueue (Add element)\n";
@@ -22,11 +24,15 @@ void RunQueueTwoStackConsole() {
             break;
         case 2:
             std::cout << "Dequeued value: " << queue.Dequeue() << "\n";
+            std::cin.ignore();
+            std::cin.get();
             break;
         case 0:
             break;
         default:
             std::cout << "Invalid choice!\n";
+            std::cin.ignore();
+            std::cin.get();
             break;
         }
     } while (choice != 0);

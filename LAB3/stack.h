@@ -6,7 +6,11 @@ struct StackNode {
     StackNode* next;
 };
 
+
+
 class Stack {
+    friend class QueueTwoStacks; 
+
 private:
     StackNode* top;
 

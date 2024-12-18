@@ -5,7 +5,7 @@
 
 class QueueRingBuffer {
 private:
-    RingBuffer buffer;
+    RingBuffer buffer; 
 
 public:
     QueueRingBuffer(int initial_capacity = 10);
@@ -14,4 +14,4 @@ public:
     void Display() const;
 };
 
-#endif // QUEUE_RING_BUFFER_H
+#endif 

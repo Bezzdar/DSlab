@@ -1,9 +1,8 @@
 #include "ring_buffer.h"
-#include <iostream>
-#include <cstring>
+#include <chrono>
+#include <thread>
 
-RingBuffer::RingBuffer(int initial_capacity)
-    : capacity(initial_capacity), head(0), tail(0), size(0) {
+RingBuffer::RingBuffer(int cap) : capacity(cap), start(0), end(0), count(0) {
     buffer = new int[capacity];
 }
 
@@ -11,53 +10,51 @@ RingBuffer::~RingBuffer() {
     delete[] buffer;
 }
 
-void RingBuffer::Resize() {
-    int new_capacity = capacity * 2;
-    int* new_buffer = new int[new_capacity];
-
-    for (int i = 0; i < size; ++i) {
-        new_buffer[i] = buffer[(head + i) % capacity];
-    }
-
-    delete[] buffer;
-    buffer = new_buffer;
-    capacity = new_capacity;
-    head = 0;
-    tail = size;
-}
-
 void RingBuffer::Add(int value) {
-    if (size == capacity) {
-        Resize();
+    if (IsFull()) {
+        std::cerr << "Buffer is full! Cannot add more elements.\n";
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        return;
     }
-    buffer[tail] = value;
-    tail = (tail + 1) % capacity;
-    ++size;
+
+    buffer[end] = value;
+    end = (end + 1) % capacity; 
+    count++;
 }
 
 int RingBuffer::Remove() {
-    if (size == 0) {
-        std::cerr << "Ring buffer is empty!\n";
-        return -1; // Error code
+    if (IsEmpty()) {
+        std::cerr << "Buffer is empty! Cannot remove elements.\n";
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        return -1; 
     }
-    int value = buffer[head];
-    head = (head + 1) % capacity;
-    --size;
+
+    int value = buffer[start];
+    start = (start + 1) % capacity; 
+    count--;
     return value;
 }
 
 int RingBuffer::GetFreeSpace() const {
-    return capacity - size;
+    return capacity - count;
 }
 
 int RingBuffer::GetOccupiedSpace() const {
-    return size;
+    return count;
+}
+
+bool RingBuffer::IsFull() const {
+    return count == capacity;
+}
+
+bool RingBuffer::IsEmpty() const {
+    return count == 0;
 }
 
 void RingBuffer::Display() const {
-    std::cout << "Ring Buffer: ";
-    for (int i = 0; i < size; ++i) {
-        std::cout << buffer[(head + i) % capacity] << " ";
+    std::cout << "Buffer content:\n";
+    for (int i = 0; i < count; ++i) {
+        std::cout << buffer[(start + i) % capacity] << " ";
     }
     std::cout << "\n";
 }

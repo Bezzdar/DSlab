@@ -21,9 +21,30 @@ int QueueTwoStacks::Dequeue() {
 }
 
 void QueueTwoStacks::Display() const {
-    std::cout << "Queue (Two Stacks): \n";
-    std::cout << "Stack 1: ";
-    stack1.Display();
-    std::cout << "Stack 2: ";
-    stack2.Display();
+    std::cout << "Queue elements (as one set): ";
+
+    // Сначала выводим элементы из stack2 (в том порядке, как они уже готовятся к извлечению)
+    StackNode* current = stack2.top;
+    while (current) {
+        std::cout << current->data << " ";
+        current = current->next;
+    }
+
+    // Теперь создаём временный стек для инверсии stack1
+    Stack tempStack;
+    current = stack1.top;
+    while (current) {
+        tempStack.Push(current->data);
+        current = current->next;
+    }
+
+    // Выводим элементы из временного стека, чтобы они были в правильном порядке
+    current = tempStack.top;
+    while (current) {
+        std::cout << current->data << " ";
+        current = current->next;
+    }
+
+    std::cout << "\n";
 }
+

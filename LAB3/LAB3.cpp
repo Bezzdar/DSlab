@@ -7,6 +7,7 @@
 int main() {
     int choice;
     do {
+        system("cls");
         std::cout << "Menu:\n";
         std::cout << "1. Work with Stack\n";
         std::cout << "2. Work with Ring Buffer\n";

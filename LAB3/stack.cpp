@@ -15,7 +15,7 @@ void Stack::Push(int value) {
 int Stack::Pop() {
     if (IsEmpty()) {
         std::cerr << "Stack is empty!\n";
-        return -1; // Error code
+        return -1; 
     }
     int value = top->data;
     StackNode* temp = top;
