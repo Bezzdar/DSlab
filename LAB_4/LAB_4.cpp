@@ -1,6 +1,8 @@
 ﻿#include "Dictionary.h"
+#include "safe_input.h"
 #include <iostream>
 #include <cstdlib>
+
 
 void menu() {
     Dictionary dictionary;
@@ -19,7 +21,7 @@ void menu() {
         std::cout << "Choose an option: ";
 
         int choice;
-        std::cin >> choice;
+        choice = SafeInput();
 
         if (choice == 4) break;
 

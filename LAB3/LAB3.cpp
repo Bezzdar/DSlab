@@ -3,6 +3,7 @@
 #include "ring_buffer_console.h"
 #include "queue_ring_console.h"
 #include "queue_two_stack_console.h"
+#include "safe_input.h"
 
 int main() {
     int choice;
@@ -15,7 +16,7 @@ int main() {
         std::cout << "4. Work with Queue (Two Stacks)\n";
         std::cout << "0. Exit\n";
         std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        choice = SafeInput();
 
         switch (choice) {
         case 1: RunStackConsole(); break;
