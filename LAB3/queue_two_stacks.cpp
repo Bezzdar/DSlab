@@ -23,22 +23,22 @@ int QueueTwoStacks::Dequeue() {
 void QueueTwoStacks::Display() const {
     std::cout << "Queue elements: ";
 
-    StackNode* current = stack2.top; // указатель на верхнем элементе
+    StackNode* current = stack2._top; // указатель на верхнем элементе
     while (current) { //пока current не равен nullptr
-        std::cout << current->data << " ";
+        std::cout << current->Data << " ";
         current = current->next; //переход к следующему узлу
     }
 
     Stack tempStack; //cоздается временный стек
-    current = stack1.top; //указатель на верхнем элементе
+    current = stack1._top; //указатель на верхнем элементе
     while (current) {
-        tempStack.Push(current->data); //инвертирование методом пуш
+        tempStack.Push(current->Data); //инвертирование методом пуш
         current = current->next; 
     }
 
-    current = tempStack.top; // указатель на верхнем элементе
+    current = tempStack._top; // указатель на верхнем элементе
     while (current) {
-        std::cout << current->data << " ";
+        std::cout << current->Data << " ";
         current = current->next;
     }
 

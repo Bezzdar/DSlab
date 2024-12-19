@@ -134,6 +134,7 @@
     <ClCompile Include="queue_two_stack_console.cpp" />
     <ClCompile Include="ring_buffer.cpp" />
     <ClCompile Include="ring_buffer_console.cpp" />
+    <ClCompile Include="safe_input.cpp" />
     <ClCompile Include="stack.cpp" />
     <ClCompile Include="stack_console.cpp" />
   </ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="queue_two_stack_console.h" />
     <ClInclude Include="ring_buffer.h" />
     <ClInclude Include="ring_buffer_console.h" />
+    <ClInclude Include="safe_input.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="stack_console.h" />
   </ItemGroup>

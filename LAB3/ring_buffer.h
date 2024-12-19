@@ -5,11 +5,11 @@
 
 class RingBuffer {
 private:
-    int* buffer;
-    int capacity;
-    int start;
-    int end;
-    int count;
+    int* _buffer;
+    int _capacity;
+    int _start;
+    int _end;
+    int _count;
 
 public:
     RingBuffer(int cap);
@@ -22,6 +22,7 @@ public:
     bool IsFull() const;
     bool IsEmpty() const;
     void Display() const;
+    void Overwrite(int value); 
 };
 
 #endif // RING_BUFFER_H

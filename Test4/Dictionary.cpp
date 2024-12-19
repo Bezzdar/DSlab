@@ -109,11 +109,11 @@ void Dictionary::Put(string key, int data) {
     {
         Node* current = _hashTable[index];
 
-        if (CompareKeys(current, newNode)) return;
+        if (CompareKeys(current, newNode)) return; 
 
-        while (current->Next != nullptr)
+        while (current->Next != nullptr) 
         {
-            current = current->Next;
+            current = current->Next; 
 
             if (CompareKeys(current->Prev, newNode) || CompareKeys(current, newNode)) return;
         }

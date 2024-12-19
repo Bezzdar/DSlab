@@ -2,7 +2,7 @@
 #define STACK_H
 
 struct StackNode {
-    int data;
+    int Data;
     StackNode* next;
 };
 
@@ -12,7 +12,7 @@ class Stack {
     friend class QueueTwoStacks; 
 
 private:
-    StackNode* top;
+    StackNode* _top;
 
 public:
     Stack();

@@ -1,32 +1,37 @@
 #include "ring_buffer.h"
+#include "safe_input.h"
 #include <iostream>
 #include <cstdlib> // Для system()
+
 
 void RunRingBufferConsole() {
     system("cls");
     int initial_capacity;
+
     std::cout << "Enter initial capacity of the ring buffer: ";
-    std::cin >> initial_capacity;
+    initial_capacity = SafeInput(); // Используем безопасный ввод
 
     RingBuffer ringBuffer(initial_capacity);
     int choice, value;
 
     do {
         system("cls"); // Очистка консоли
+        std::cout << "Buffer content:\n";
         ringBuffer.Display();
         std::cout << "Ring Buffer Menu:\n";
         std::cout << "1. Add element\n";
         std::cout << "2. Remove element\n";
         std::cout << "3. Get free space\n";
         std::cout << "4. Get occupied space\n";
+        std::cout << "5. Overwrite element\n";
         std::cout << "0. Back to main menu\n";
         std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        choice = SafeInput(); // Используем безопасный ввод
 
         switch (choice) {
         case 1:
             std::cout << "Enter value to add: ";
-            std::cin >> value;
+            value = SafeInput(); // Используем безопасный ввод
             ringBuffer.Add(value);
             break;
         case 2:
@@ -44,6 +49,11 @@ void RunRingBufferConsole() {
             std::cin.ignore();
             std::cin.get();
             break;
+        case 5:
+            std::cout << "Enter value to overwrite: ";
+            value = SafeInput(); // Используем безопасный ввод
+            ringBuffer.Overwrite(value);
+            break;
         case 0:
             break;
         default:
@@ -54,3 +64,4 @@ void RunRingBufferConsole() {
         }
     } while (choice != 0);
 }
+

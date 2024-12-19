@@ -1,15 +1,15 @@
 #include "stack.h"
 #include <iostream>
 
-Stack::Stack() : top(nullptr) {}
+Stack::Stack() : _top(nullptr) {}
 
 Stack::~Stack() {
     Clear();
 }
 
 void Stack::Push(int value) {
-    StackNode* newNode = new StackNode{ value, top };
-    top = newNode;
+    StackNode* newNode = new StackNode{ value, _top };
+    _top = newNode;
 }
 
 int Stack::Pop() {
@@ -17,15 +17,15 @@ int Stack::Pop() {
         std::cerr << "Stack is empty!\n";
         return -1; 
     }
-    int value = top->data;
-    StackNode* temp = top;
-    top = top->next;
+    int value = _top->Data;
+    StackNode* temp = _top;
+    _top = _top->next;
     delete temp;
     return value;
 }
 
 bool Stack::IsEmpty() const {
-    return top == nullptr;
+    return _top == nullptr;
 }
 
 void Stack::Clear() {
@@ -35,10 +35,10 @@ void Stack::Clear() {
 }
 
 void Stack::Display() const {
-    StackNode* current = top;
+    StackNode* current = _top;
     std::cout << "Stack: ";
     while (current) {
-        std::cout << current->data << " ";
+        std::cout << current->Data << " ";
         current = current->next;
     }
     std::cout << "\n";

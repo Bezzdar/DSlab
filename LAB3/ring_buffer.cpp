@@ -2,12 +2,12 @@
 #include <chrono>
 #include <thread>
 
-RingBuffer::RingBuffer(int cap) : capacity(cap), start(0), end(0), count(0) {
-    buffer = new int[capacity];
+RingBuffer::RingBuffer(int cap) : _capacity(cap), _start(0), _end(0), _count(0) {
+    _buffer = new int[_capacity];
 }
 
 RingBuffer::~RingBuffer() {
-    delete[] buffer;
+    delete[] _buffer;
 }
 
 void RingBuffer::Add(int value) {
@@ -17,9 +17,9 @@ void RingBuffer::Add(int value) {
         return;
     }
 
-    buffer[end] = value;
-    end = (end + 1) % capacity; 
-    count++;
+    _buffer[_end] = value;
+    _end = (_end + 1) % _capacity; 
+    _count++;
 }
 
 int RingBuffer::Remove() {
@@ -29,32 +29,45 @@ int RingBuffer::Remove() {
         return -1; 
     }
 
-    int value = buffer[start];
-    start = (start + 1) % capacity; 
-    count--;
+    int value = _buffer[_start];
+    _start = (_start + 1) % _capacity; 
+    _count--;
     return value;
 }
 
 int RingBuffer::GetFreeSpace() const {
-    return capacity - count;
+    return _capacity - _count;
 }
 
 int RingBuffer::GetOccupiedSpace() const {
-    return count;
+    return _count;
 }
 
 bool RingBuffer::IsFull() const {
-    return count == capacity;
+    return _count == _capacity;
 }
 
 bool RingBuffer::IsEmpty() const {
-    return count == 0;
+    return _count == 0;
 }
 
 void RingBuffer::Display() const {
-    std::cout << "Buffer content:\n";
-    for (int i = 0; i < count; ++i) {
-        std::cout << buffer[(start + i) % capacity] << " ";
+
+    for (int i = 0; i < _count; ++i) {
+        std::cout << _buffer[(_start + i) % _capacity] << " ";
     }
     std::cout << "\n";
 }
+
+void RingBuffer::Overwrite(int value) {
+    if (IsFull()) {
+        _buffer[_start] = value;
+        _start = (_start + 1) % _capacity; 
+    }
+    else {
+        
+        Add(value);
+    }
+}
+
+
