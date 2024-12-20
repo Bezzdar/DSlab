@@ -1,4 +1,4 @@
-#include "safe_input.h"
+#include "SafeInput.h"
 
 int SafeInput() {
     int value;

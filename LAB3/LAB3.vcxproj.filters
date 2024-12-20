@@ -18,60 +18,60 @@
     <ClCompile Include="LAB3.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="stack.cpp">
+    <ClCompile Include="Stack.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="ring_buffer.cpp">
+    <ClCompile Include="RingBuffer.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="queue_ring_buffer.cpp">
+    <ClCompile Include="QueueRingBuffer.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="queue_two_stacks.cpp">
+    <ClCompile Include="QueueTwoStacks.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="stack_console.cpp">
+    <ClCompile Include="StackConsole.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="ring_buffer_console.cpp">
+    <ClCompile Include="RingBufferConsole.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="queue_ring_console.cpp">
+    <ClCompile Include="QueueRingConsole.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="queue_two_stack_console.cpp">
+    <ClCompile Include="QueueTwoStackConsole.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="safe_input.cpp">
+    <ClCompile Include="SafeInput.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stack.h">
+    <ClInclude Include="Stack.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="ring_buffer.h">
+    <ClInclude Include="RingBuffer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="queue_ring_buffer.h">
+    <ClInclude Include="QueueRingBuffer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="queue_two_stacks.h">
+    <ClInclude Include="QueueTwoStacks.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="stack_console.h">
+    <ClInclude Include="StackConsole.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="ring_buffer_console.h">
+    <ClInclude Include="RingBufferConsole.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="queue_ring_console.h">
+    <ClInclude Include="QueueRingConsole.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="queue_two_stack_console.h">
+    <ClInclude Include="QueueTwoStackConsole.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="safe_input.h">
+    <ClInclude Include="SafeInput.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

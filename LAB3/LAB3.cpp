@@ -1,9 +1,9 @@
 ﻿#include <iostream>
-#include "stack_console.h"
-#include "ring_buffer_console.h"
-#include "queue_ring_console.h"
-#include "queue_two_stack_console.h"
-#include "safe_input.h"
+#include "StackConsole.h"
+#include "RingBufferConsole.h"
+#include "QueueRingConsole.h"
+#include "QueueTwoStackConsole.h"
+#include "SafeInput.h"
 
 int main() {
     int choice;

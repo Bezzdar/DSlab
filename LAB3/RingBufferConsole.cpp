@@ -1,5 +1,5 @@
-#include "ring_buffer.h"
-#include "safe_input.h"
+#include "RingBuffer.h"
+#include "SafeInput.h"
 #include <iostream>
 #include <cstdlib> // Для system()
 

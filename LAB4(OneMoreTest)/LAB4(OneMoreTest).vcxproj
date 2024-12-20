@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{def0714c-b26d-443d-b90e-36afd5c360ea}</ProjectGuid>
-    <RootNamespace>LAB3</RootNamespace>
+    <ProjectGuid>{6b54b2de-bb80-4371-9d3a-e6ee66b9b3e0}</ProjectGuid>
+    <RootNamespace>LAB4OneMoreTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,27 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LAB3.cpp" />
-    <ClCompile Include="QueueRingBuffer.cpp" />
-    <ClCompile Include="QueueRingConsole.cpp" />
-    <ClCompile Include="QueueTwoStacks.cpp" />
-    <ClCompile Include="QueueTwoStackConsole.cpp" />
-    <ClCompile Include="RingBuffer.cpp" />
-    <ClCompile Include="RingBufferConsole.cpp" />
+    <ClCompile Include="Dictionary.cpp" />
+    <ClCompile Include="LAB4(OneMoreTest).cpp" />
     <ClCompile Include="SafeInput.cpp" />
-    <ClCompile Include="Stack.cpp" />
-    <ClCompile Include="StackConsole.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="QueueRingBuffer.h" />
-    <ClInclude Include="QueueRingConsole.h" />
-    <ClInclude Include="QueueTwoStacks.h" />
-    <ClInclude Include="QueueTwoStackConsole.h" />
-    <ClInclude Include="RingBuffer.h" />
-    <ClInclude Include="RingBufferConsole.h" />
+    <ClInclude Include="Dictionary.h" />
     <ClInclude Include="SafeInput.h" />
-    <ClInclude Include="Stack.h" />
-    <ClInclude Include="StackConsole.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

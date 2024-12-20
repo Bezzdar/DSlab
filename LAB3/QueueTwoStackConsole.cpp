@@ -1,30 +1,30 @@
-#include "stack.h"
+#include "QueueTwoStacks.h"
 #include <iostream>
 #include <cstdlib> // Для system()
 
-void RunStackConsole() {
-    Stack stack;
+void RunQueueTwoStackConsole() {
+    QueueTwoStacks queue;
     int choice, value;
 
     do {
-        system("cls"); // Очистка консоли для обновления интерфейса
-        stack.Display();
-        std::cout << "Stack Menu:\n";
-        std::cout << "1. Push\n";
-        std::cout << "2. Pop\n";
+        system("cls"); // Очистка консоли
+        queue.Display();
+        std::cout << "Queue (Two Stacks) Menu:\n";
+        std::cout << "1. Enqueue (Add element)\n";
+        std::cout << "2. Dequeue (Remove element)\n";
         std::cout << "0. Back to main menu\n";
         std::cout << "Enter your choice: ";
         std::cin >> choice;
 
         switch (choice) {
         case 1:
-            std::cout << "Enter value to push: ";
+            std::cout << "Enter value to enqueue: ";
             std::cin >> value;
-            stack.Push(value);
+            queue.Enqueue(value);
             break;
         case 2:
-            std::cout << "Popped value: " << stack.Pop() << "\n";
-            std::cin.ignore(); 
+            std::cout << "Dequeued value: " << queue.Dequeue() << "\n";
+            std::cin.ignore();
             std::cin.get();
             break;
         case 0:

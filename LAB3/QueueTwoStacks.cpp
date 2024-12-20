@@ -1,4 +1,4 @@
-#include "queue_two_stacks.h"
+#include "QueueTwoStacks.h"
 #include <iostream>
 
 QueueTwoStacks::QueueTwoStacks() {}
