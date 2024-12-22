@@ -1,7 +1,7 @@
 #ifndef QUEUE_RING_BUFFER_H
 #define QUEUE_RING_BUFFER_H
 
-#include "ring_buffer.h"
+#include "RingBuffer.h"
 
 class QueueRingBuffer {
 private:

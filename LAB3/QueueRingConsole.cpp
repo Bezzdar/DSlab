@@ -1,6 +1,7 @@
 #include "QueueRingBuffer.h"
 #include <iostream>
 #include <cstdlib> // Äëÿ system()
+#include "SafeInput.h"
 
 void RunQueueRingConsole() {
     int initial_capacity;
@@ -19,8 +20,7 @@ void RunQueueRingConsole() {
         std::cout << "2. Dequeue (Remove element)\n";
         std::cout << "0. Back to main menu\n";
         std::cout << "Enter your choice: ";
-        std::cin >> choice;
-
+        choice = SafeInput();
         switch (choice) {
         case 1:
             std::cout << "Enter value to enqueue: ";

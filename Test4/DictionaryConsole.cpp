@@ -52,7 +52,7 @@ void DictionaryConsole(Dictionary& hash) {
     {
         MenuDictionary(hash);
         int commandNumber;
-        commandNumber = ValidInputMenu(0, 3);
+        commandNumber = SafeInput(0, 3);
         switch (commandNumber)
         {
         case 1:

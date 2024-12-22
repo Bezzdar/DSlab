@@ -1,6 +1,7 @@
 #include "Stack.h"
 #include <iostream>
 #include <cstdlib> // Äëÿ system()
+#include "SafeInput.h"
 
 void RunStackConsole() {
     Stack stack;
@@ -14,7 +15,7 @@ void RunStackConsole() {
         std::cout << "2. Pop\n";
         std::cout << "0. Back to main menu\n";
         std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        choice = SafeInput();
 
         switch (choice) {
         case 1:

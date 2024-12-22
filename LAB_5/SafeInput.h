@@ -1,6 +1,5 @@
-#pragma once
-#ifndef VALIDATOR_H
-#define VALIDATOR_H
+#ifndef SAFEINPUT_H
+#define SAFEINPUT_H
 #include <iostream>
 
 using namespace std;
