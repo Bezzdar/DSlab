@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include "Symbols.h"
+#include "Lines.h"
 
 
 using namespace std;

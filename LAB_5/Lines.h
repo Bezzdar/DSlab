@@ -1,6 +1,6 @@
 
-#ifndef SYMBOLS_H
-#define SYMBOLS_H
+#ifndef LINES_H
+#define LINES_H
 
 #include <string>
 #include <iostream>

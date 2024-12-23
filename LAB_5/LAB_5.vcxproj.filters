@@ -50,7 +50,7 @@
     <ClInclude Include="Node.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Symbols.h">
+    <ClInclude Include="Lines.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="SafeInput.h">

@@ -141,7 +141,7 @@
     <ClInclude Include="TreapConsole.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="SafeInput.h" />
-    <ClInclude Include="Symbols.h" />
+    <ClInclude Include="Lines.h" />
     <ClInclude Include="TreapNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
