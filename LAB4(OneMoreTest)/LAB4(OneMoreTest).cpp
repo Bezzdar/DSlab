@@ -69,7 +69,7 @@ int main() {
             std::cin.get(); // Ожидание нажатия клавиши
             break;
         }
-    } while (choice != 5);
+    } while (choice != 4);
 
     return 0;
 }

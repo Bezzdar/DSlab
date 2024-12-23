@@ -4,7 +4,7 @@ int ValidCin()
 {
     int input;
     while (!(cin >> input)) {
-        cout << "Invalid input. Please enter an integer! " << endl;
+        cout << "Invalid input. Please enter a valid number: " << endl;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
@@ -19,7 +19,7 @@ int SafeInput(int numbOfFirstCommand, int numbOfLastCommnad)
         cout << "\x1b[2K";
         cout << "\x1b[1A";
         cout << "\r";
-        cout << "Invalid input. Please enter an integer! " << endl;
+        cout << "Invalid input. Please enter a valid number: " << endl;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }

@@ -5,7 +5,7 @@
 struct TreapNode
 {
     int start = 0;
-    int end = 20;
+    int end = 36;
     int x = rand() % (end - start + 1) + start;
 
     int Key;
