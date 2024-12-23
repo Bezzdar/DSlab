@@ -52,10 +52,10 @@ void MenuTreap(Treap& tree)
     cout << endl;
 
     cout << "Size:"<< tree.GetSize() << endl << endl;
-    cout << "1. Add new element not optimazed" << endl;
-    cout << "2. Remove element by value not optimazed" << endl;
-    cout << "3. Add new element optimazed" << endl;
-    cout << "4. Remove element by value optimazed" << endl;
+    cout << "1. Add new element(not optimazed)" << endl;
+    cout << "2. Add new element(optimazed)" << endl;
+    cout << "3. Remove element by value(not optimazed)" << endl;
+    cout << "4. Remove element by value(optimazed)" << endl;
     cout << "5. Clear Tree" << endl;
     cout << "0. Exit to main menu" << endl;
 }
@@ -81,14 +81,15 @@ void TreapConsole(Treap& tree) {
             break;
         case 2:
             cout << "Enter a value:";
-            cin >> deletedElement;
-            tree.DeleteElementNotOptimazed(deletedElement);
-            system("cls");
-            break;
-        case 3:
-            cout << "Enter a value:";
             newElement = ValidCin();
             tree.AddElementOptimazed(newElement);
+            system("cls");
+            break;
+            
+        case 3:
+            cout << "Enter a value:";
+            cin >> deletedElement;
+            tree.DeleteElementNotOptimazed(deletedElement);
             system("cls");
             break;
         case 4:
