@@ -32,17 +32,17 @@ void menu() {
             std::cin >> key;
             std::cout << "Enter value: ";
             std::cin >> value;
-            dictionary.add(key, value);
+            dictionary.Add(key, value);
             break;
         case 2:
             std::cout << "Enter key to remove: ";
             std::cin >> key;
-            dictionary.remove(key);
+            dictionary.Remove(key);
             break;
         case 3:
             std::cout << "Enter key to search: ";
             std::cin >> key;
-            dictionary.search(key);
+            dictionary.Search(key);
             break;
         default:
             std::cout << "Invalid option. Try again.\n";

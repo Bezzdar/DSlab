@@ -128,7 +128,7 @@ void HashTable::print() const {
 Dictionary::Dictionary(size_t initialCapacity) : hashTable(initialCapacity) {}
 
 // Добавление нового элемента в словарь
-void Dictionary::add(const std::string& key, const std::string& value) {
+void Dictionary::Add(const std::string& key, const std::string& value) {
     if (hashTable.add(key, value)) {
         std::cout << "Added: (" << key << ": " << value << ")" << std::endl;
     }
@@ -136,7 +136,7 @@ void Dictionary::add(const std::string& key, const std::string& value) {
 }
 
 // Удаление элемента из словаря
-void Dictionary::remove(const std::string& key) {
+void Dictionary::Remove(const std::string& key) {
     if (hashTable.remove(key)) {
         std::cout << "Removed: " << key << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(1)); 
@@ -149,7 +149,7 @@ void Dictionary::remove(const std::string& key) {
 }
 
 // Поиск элемента в словаре
-void Dictionary::search(const std::string& key) const {
+void Dictionary::Search(const std::string& key) const {
     std::string value;
     if (hashTable.search(key, value)) {
         std::cout << "Found: (" << key << ": " << value << ")" << std::endl;

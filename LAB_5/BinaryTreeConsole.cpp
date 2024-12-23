@@ -14,7 +14,7 @@ void Show1(Node const* node, bool high, vector< string> const& lpref, vector< st
     if (node->Left)
         Show1(node->Left, high, VSCat(lpref, high ? VS({ " ", " " }) : VS({ " " })), VSCat(lpref, high ? VS({ ch_ddia, ch_ver }) : VS({ ch_ddia })), VSCat(lpref, high ? VS({ ch_hor, " " }) : VS({ ch_hor })), false, true, lines);
 
-    auto sval = "[" + to_string(node->Data) + "]";
+    auto sval = to_string(node->Data);
     string coloredSval = sval;
     size_t sm = left || sval.empty() ? sval.size() / 2 : ((sval.size() + 1) / 2 - 1);
     for (size_t i = 0; i < sval.size(); ++i) {

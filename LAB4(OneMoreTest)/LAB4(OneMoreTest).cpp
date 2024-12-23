@@ -27,7 +27,7 @@ int main() {
         clearScreen();
 
         std::cout << "Current Dictionary State:\n";
-        dict.display();
+        dict.Display();
 
         displayMenu();
 
@@ -39,23 +39,22 @@ int main() {
             std::cin >> key;
             std::cout << "Enter value: ";
             std::cin >> value;
-            dict.add(key, value);
+            dict.Add(key, value);
             break;
 
         case 2:
             std::cout << "Enter key to remove: ";
             std::cin >> key;
-            dict.remove(key);
+            dict.Remove(key);
             break;
 
         case 3:
             std::cout << "Enter key to search: ";
             std::cin >> key;
-            value = dict.search(key);
+            value = dict.Search(key);
             std::cout << "Value: " << value << "\n";
-            std::cout << "Press Enter to continue...";
             std::cin.ignore();
-            std::cin.get(); // Ожидание нажатия клавиши
+            std::cin.get(); 
             break;
 
         case 4:
@@ -64,9 +63,8 @@ int main() {
 
         default:
             std::cout << "Invalid choice. Try again.\n";
-            std::cout << "Press Enter to continue...";
             std::cin.ignore();
-            std::cin.get(); // Ожидание нажатия клавиши
+            std::cin.get(); 
             break;
         }
     } while (choice != 4);

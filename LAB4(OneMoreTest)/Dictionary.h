@@ -13,21 +13,21 @@ private:
         std::string value;
     };
 
-    std::vector<std::list<Entry>> table;
-    size_t capacity;
-    size_t size;
-    static const size_t DEFAULT_CAPACITY = 8;
-    static const double LOAD_FACTOR;
+    std::vector<std::list<Entry>> _table;
+    size_t _capacity;
+    size_t _size;
+    static const size_t _defaultCapacity = 8;
+    static const double _loadFactor;
 
-    size_t hash(const std::string& key) const;
-    void rehash();
+    size_t Hash(const std::string& key) const;
+    void Rehash();
 
 public:
     Dictionary();
-    void add(const std::string& key, const std::string& value);
-    void remove(const std::string& key);
-    std::string search(const std::string& key) const;
-    void display() const;
+    void Add(const std::string& key, const std::string& value);
+    void Remove(const std::string& key);
+    std::string Search(const std::string& key) const;
+    void Display() const;
 };
 
 #endif // DICTIONARY_H

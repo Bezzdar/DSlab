@@ -40,9 +40,9 @@ private:
 
 public:
     Dictionary(size_t initialCapacity = 8);
-    void add(const std::string& key, const std::string& value);
-    void remove(const std::string& key);
-    void search(const std::string& key) const;
+    void Add(const std::string& key, const std::string& value);
+    void Remove(const std::string& key);
+    void Search(const std::string& key) const;
     void print() const;
 };
 

@@ -2,15 +2,15 @@
 #include <functional>
 
 // Константа коэффициента загрузки
-const double Dictionary::LOAD_FACTOR = 0.75;
+const double Dictionary::_loadFactor = 0.75;
 
 // Конструктор
-Dictionary::Dictionary() : capacity(DEFAULT_CAPACITY), size(0) {
-    table.resize(capacity);
+Dictionary::Dictionary() : _capacity(_defaultCapacity), _size(0) {
+    _table.resize(_capacity);
 }
 
 // Хеш-функция Прямого метода Пирсона
-size_t Dictionary::hash(const std::string& key) const {
+size_t Dictionary::Hash(const std::string& key) const {
     const unsigned char P[256] = 
     { 98,  6, 85,150, 36, 23,112,164,135,207,169,  5, 26, 64,165,219,
       61, 20, 68, 89,130, 63, 52,102, 24,229,132,245, 80,216,195,115,
@@ -33,58 +33,58 @@ size_t Dictionary::hash(const std::string& key) const {
     for (unsigned char c : key) {
         h = P[h ^ c];
     }
-    return h % capacity;
+    return h % _capacity;
 }
 
 // Перехеширование
-void Dictionary::rehash() {
-    capacity *= 2;
-    std::vector<std::list<Entry>> newTable(capacity);
+void Dictionary::Rehash() {
+    _capacity *= 2;
+    std::vector<std::list<Entry>> newTable(_capacity);
 
-    for (const auto& chain : table) {
+    for (const auto& chain : _table) {
         for (const auto& entry : chain) {
-            size_t index = hash(entry.key);
+            size_t index = Hash(entry.key);
             newTable[index].push_back(entry);
         }
     }
 
-    table = std::move(newTable);
+    _table = std::move(newTable);
 }
 
 // Добавление элемента
-void Dictionary::add(const std::string& key, const std::string& value) {
-    size_t index = hash(key);
-    for (auto& entry : table[index]) {
+void Dictionary::Add(const std::string& key, const std::string& value) {
+    size_t index = Hash(key);
+    for (auto& entry : _table[index]) {
         if (entry.key == key) {
-            entry.value = value; // Обновление значения
+            entry.value = value; 
             return;
         }
     }
-    table[index].push_back({key, value});
-    size++;
+    _table[index].push_back({key, value});
+    _size++;
 
-    if (static_cast<double>(size) / capacity > LOAD_FACTOR) {
-        rehash();
+    if (static_cast<double>(_size) / _capacity > _loadFactor) {
+        Rehash();
     }
 }
 
 // Удаление элемента
-void Dictionary::remove(const std::string& key) {
-    size_t index = hash(key);
-    auto& chain = table[index];
-    for (auto it = chain.begin(); it != chain.end(); ++it) {
-        if (it->key == key) {
-            chain.erase(it);
-            size--;
+void Dictionary::Remove(const std::string& key) {
+    size_t index = Hash(key);
+    auto& chain = _table[index];
+    for (auto i = chain.begin(); i != chain.end(); ++i) {
+        if (i->key == key) {
+            chain.erase(i);
+            _size--;
             return;
         }
     }
 }
 
 // Поиск элемента
-std::string Dictionary::search(const std::string& key) const {
-    size_t index = hash(key);
-    const auto& chain = table[index];
+std::string Dictionary::Search(const std::string& key) const {
+    size_t index = Hash(key);
+    const auto& chain = _table[index];
     for (const auto& entry : chain) {
         if (entry.key == key) {
             return entry.value;
@@ -94,10 +94,10 @@ std::string Dictionary::search(const std::string& key) const {
 }
 
 // Вывод состояния словаря
-void Dictionary::display() const {
-    for (size_t i = 0; i < table.size(); ++i) {
+void Dictionary::Display() const {
+    for (size_t i = 0; i < _table.size(); ++i) {
         std::cout << "[" << i << "]: ";
-        for (const auto& entry : table[i]) {
+        for (const auto& entry : _table[i]) {
             std::cout << "{" << entry.key << ": " << entry.value << "} ";
         }
         std::cout << "\n";
